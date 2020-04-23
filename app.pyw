@@ -25,7 +25,7 @@ def getString():
     res = txt.get()
     yt = YouTube(res)
     if var1.get() == 1:
-        stream = yt.streams.filter(only_audio=True).first()
+        stream =  yt.streams.filter(only_audio=True).first()
         try:  
             os.mkdir('mp3')
         except OSError as error:  
@@ -33,7 +33,7 @@ def getString():
         stream.download('mp3')
         print(stream)
     elif var1.get() == 0:
-        stream = yt.streams.first()
+        stream = yt.streams.filter(adaptive=True).first()
         try:  
             os.mkdir('videos')
         except OSError as error:  
