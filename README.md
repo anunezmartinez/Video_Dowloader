@@ -1,1 +1,2 @@
-# Youtube_Video_Dowloader
+# How to build it
+pyinstaller --onefile app.pyw
