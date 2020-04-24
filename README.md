@@ -1,3 +1,3 @@
 # How to build it
-(pip installer pyinstaller)
+(pip install pyinstaller)
 pyinstaller --onefile app.pyw
