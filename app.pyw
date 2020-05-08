@@ -31,7 +31,6 @@ def getString():
         except OSError as error:  
             print(error)  
         stream.download('mp3')
-        print(stream)
     elif var1.get() == 0:
         stream = yt.streams.filter(adaptive=True).first()
         try:  
@@ -39,7 +38,6 @@ def getString():
         except OSError as error:  
             print(error)  
         stream.download('videos')
-        print(stream)
     
 
 btn = Button(window, text="Download", command=getString)
