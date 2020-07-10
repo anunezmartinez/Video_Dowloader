@@ -1,7 +1,8 @@
+from tkinter import filedialog
 from tkinter import *
 import os
 from pytube import YouTube
-	
+
 
 window = Tk()
 
@@ -27,17 +28,18 @@ def getString():
     if var1.get() == 1:
         stream =  yt.streams.filter(only_audio=True).first()
         try:  
-            os.mkdir('mp3')
+            # os.mkdir('mp3')
+            window.filename =  filedialog.askdirectory()
         except OSError as error:  
             print(error)  
-        stream.download('mp3')
+        stream.download(window.filename)
     elif var1.get() == 0:
         stream = yt.streams.filter(adaptive=True).first()
         try:  
-            os.mkdir('videos')
+            window.filename =  filedialog.askdirectory()
         except OSError as error:  
             print(error)  
-        stream.download('videos')
+        stream.download(window.filename)
     
 
 btn = Button(window, text="Download", command=getString)
